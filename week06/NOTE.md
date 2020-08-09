@@ -46,12 +46,47 @@
       - `python manage.py runserver 0.0.0.0:80`：可以指定端口
   - 配置文件包括如下
     - 项目路径
+      - `BASE_DIR`：通过`os`包
     - 密钥
+      - `SECRET_KEY`
+    - 调试模式
+      - `DEBUG`为true表示打开调试模式，调试模式仅用于开发环境
     - 域名访问权限
+      - `ALLOWED_HOSTS=[]`填写允许访问的域名
     - App列表
+      - `INSTALLED_APPS`app列表
     - 静态资源：CSS、JavaScript、图片等
+      - `STATIC_URL`
     - 模板文件
+      - `TEMPLATES`
+      - `BACKEND`指定模板引擎
+      - `DIRS`设置模板路径
+      - `APP_DIRS`是否在app里查找模板文件
+      - `OPTIONS`用于RequestContext上下文的调用函数
     - 数据库配置
+      - `DATABASES`
     - 缓存
     - 中间件
+      - `MIDDLEWARE`
+    - url匹配
+      - `ROOT_URLCONF`指定http请求之后的url匹配规则文件
+    - 时区、国际化等配置
   - URL支持变量
+    - str
+    - int
+      - path('<int year>', views.myyear)
+    - slug：备注
+    - uuid
+    - path
+  - URL调度器：类似于PHP中的路由列表
+### 模块和包
+  - 模块
+    - 以`.py`结尾的python程序
+  - 包
+    - 存放多个模块的目录
+    - `__init__.py`包运行的初始化文件，可以为空文件
+    - 包的导入
+      - `from xxx import x2 as x`
+      - `from .xxx import x`
+  - 使用import引入，是将文件作为包`__name__`就是`文件名称`
+  - 直接执行文件，是将其作为模块`__name__`就是`__main__`
