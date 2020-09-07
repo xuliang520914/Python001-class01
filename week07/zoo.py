@@ -7,6 +7,7 @@ class Zoo(object):
     def __init__(self, name):
         self.name = name
 
+    @classmethod
     def add_animal(cls, animal_instance):
         setattr(cls, animal_instance.__class__.__name__, True)
 
